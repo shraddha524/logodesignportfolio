@@ -1,0 +1,581 @@
+/* VARIABLES */
+:root {
+    --primary-color: #00ADB5; /* Teal/Cyan for accent */
+    --secondary-color: #222831; /* Dark background color for cards/sections */
+    --background-color: #393E46; /* Main background color */
+    --text-color: #EEEEEE; /* Light text color */
+    --heading-color: #FFFFFF; /* White headings */
+    --highlight-color: #FFD369; /* Soft Gold/Yellow highlight */
+    --border-radius: 8px;
+    --transition-speed: 0.5s;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* BASE STYLES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* HEADER & NAVIGATION */
+header {
+    background: var(--background-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    transition: color var(--transition-speed);
+}
+
+.nav-links li a:hover {
+    color: var(--highlight-color);
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 0;
+    min-height: 80vh; 
+}
+
+.section-title {
+    font-size: 2.5em;
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.subsection-title {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: var(--heading-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #008D93;
+    transform: translateY(-4px); 
+    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
+}
+
+/* HOME SECTION SPECIFIC */
+.home-section {
+    display: flex;
+    align-items: center;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.name {
+    font-size: 4em;
+    margin: 0.1em 0;
+    color: var(--primary-color);
+}
+
+.tagline {
+    font-size: 1.5em;
+    color: var(--heading-color);
+    font-weight: 300;
+}
+
+.highlight {
+    color: var(--highlight-color);
+    font-weight: 600;
+}
+
+.profile-image-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--card-shadow);
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links a {
+    font-size: 1.5em;
+    color: var(--text-color);
+    margin-right: 20px;
+    transition: color var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--highlight-color);
+}
+
+/* ABOUT SECTION SPECIFIC */
+.about-section {
+    background-color: var(--secondary-color);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-section .profile-image-container img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: var(--card-shadow);
+}
+
+/* EDUCATION & CERTIFICATIONS */
+.education-section, .certifications-section, .projects-section, .skills-section, .interests-section {
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.education-grid, .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.education-card, .certification-card {
+    background-color: var(--background-color);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed);
+    border-left: 5px solid var(--primary-color);
+}
+
+.education-card:hover, .certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.education-card h3, .certification-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.education-card .details, .certification-card .authority {
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+/* PROJECTS SECTION SPECIFIC */
+.freelance-experience-card {
+    background-color: var(--background-color);
+    padding: 25px;
+    border-left: 5px solid var(--highlight-color);
+    margin-bottom: 40px;
+    border-radius: var(--border-radius);
+}
+
+.freelance-experience-card h3 {
+    margin-top: 0;
+    color: var(--highlight-color);
+}
+
+.freelance-experience-card ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+    transition: transform var(--transition-speed);
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    border: 1px solid var(--secondary-color);
+}
+
+.project-card p.tools {
+    font-style: italic;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+/* SKILLS SECTION SPECIFIC */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.skill-tags-only .skill-tag {
+    background-color: var(--primary-color);
+    color: var(--heading-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+.skill-tags-only .skill-tag:hover {
+    background-color: var(--highlight-color);
+    color: var(--secondary-color);
+}
+
+.soft-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.soft-skill-card {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    transition: background-color 0.3s;
+}
+
+.soft-skill-card:hover {
+    background-color: #4a515a;
+}
+
+.soft-skill-card i {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* SERVICES SECTION (Repurposed from Interests) */
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.interest-card {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    transition: box-shadow var(--transition-speed);
+}
+
+.interest-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.card-icon i {
+    font-size: 2.5em;
+    color: var(--highlight-color);
+    margin-bottom: 15px;
+}
+
+.interest-card p {
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    background-color: var(--background-color);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-left .section-title {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.contact-info-item {
+    margin: 10px 0;
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.contact-info-item i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* FOOTER */
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+
+/* --- CHATBOT STYLING (Fixed to Bottom Right) --- */
+#chatbot-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+}
+
+#chatbot-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.5em;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#chatbot-toggle:hover {
+    background-color: #008D93;
+    transform: scale(1.1);
+}
+
+#chatbot-box {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 320px;
+    height: 400px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Animation for appearing */
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    pointer-events: none;
+}
+
+#chatbot-box.active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: all;
+}
+
+#chatbot-header {
+    background-color: var(--primary-color);
+    color: var(--heading-color);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chatbot-header h4 {
+    margin: 0;
+}
+
+#chatbot-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#chatbot-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: var(--secondary-color);
+}
+
+.message p strong {
+    color: var(--highlight-color);
+    font-weight: 600;
+}
+
+#chatbot-messages .message {
+    margin-bottom: 10px;
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 15px;
+    line-height: 1.4;
+    font-size: 0.9em;
+}
+
+#chatbot-messages .user {
+    background-color: var(--primary-color);
+    color: var(--heading-color);
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+#chatbot-messages .bot {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    align-self: flex-start;
+}
+
+
+#chatbot-form {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#chatbot-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#chatbot-form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* --- ANIMATIONS (Initial States) --- */
+.animate-fade-in {
+    opacity: 0;
+}
+
+.animate-slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.animate-slide-left {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.animate-slide-right {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.animate-scale-up {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .home-grid, .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-section .profile-image-container {
+        order: -1;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 3em;
+    }
+
+    .contact-left .section-title {
+        text-align: center;
+    }
+}
